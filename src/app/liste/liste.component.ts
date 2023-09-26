@@ -7,14 +7,13 @@ import { Component } from '@angular/core';
 })
 export class ListeComponent {
   listFilms = [
-    {titre:'Le seigneur des Anneaux', link:''},
-    {titre:'Harry Potter', link:''},
-    {titre:'Star Wars', link:''},
-    {titre:'Indiana Jones', link:''},
-    {titre:'Seven', link:''}];
+    {titre:'Le seigneur des Anneaux', link:'assets/img/LSDA.jpg'},
+    {titre:'Harry Potter', link:'assets/img/HP.jpg'},
+    {titre:'Star Wars', link:'assets/img/StarWars.jpg'},
+    {titre:'Indiana Jones', link:'assets/img/IJ.jpg'},
+    {titre:'Seven', link:'assets/img/seven.jpg'}];
 
-
-  filmSelectionne: any; // Pour stocker le film sélectionné
+  filmSelectionne: any;
 
   afficherFilm(film: any) {
     this.filmSelectionne = film;

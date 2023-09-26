@@ -6,7 +6,5 @@
 
 <div *ngIf="filmSelectionne">
   <h2>{{ filmSelectionne.titre }}</h2>
-  <img src="assets/images/mon_image.png">
-
-
+  <img class="imageFilm" [src]='filmSelectionne.link'>
 </div>
