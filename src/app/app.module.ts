@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { ListeComponent } from './liste/liste.component';
 import { GestionComponent } from './gestion/gestion.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FooterComponent,
     ListeComponent,
     GestionComponent,
-    HomeComponent
+    HomeComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
