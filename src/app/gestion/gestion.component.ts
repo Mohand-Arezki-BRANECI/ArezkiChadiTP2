@@ -1,5 +1,8 @@
+
 import {Component, OnInit} from '@angular/core';
 import {DataService} from "../data.service";
+import {faHome} from "@fortawesome/free-solid-svg-icons";
+
 
 @Component({
   selector: 'app-gestion',
@@ -8,7 +11,6 @@ import {DataService} from "../data.service";
 })
 export class GestionComponent implements OnInit {
   formData: any;
-
   constructor(private dataService: DataService) {}
 
   ngOnInit() {
@@ -22,4 +24,5 @@ export class GestionComponent implements OnInit {
   get show404Error() {
     return !this.formData;
   }
+
 }

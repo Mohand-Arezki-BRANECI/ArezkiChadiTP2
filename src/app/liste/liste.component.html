@@ -1,10 +1,11 @@
-<ul>
-  <li *ngFor="let film of listFilms" (click)="afficherFilm(film)" class="movieTitle">
+<span id="filmList">Liste des Films</span>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let film of listFilms" (click)="afficherFilm(film)">
     {{ film.titre }}
   </li>
 </ul>
 
-<div *ngIf="filmSelectionne">
-  <h2>{{ filmSelectionne.titre }}</h2>
+<div *ngIf="filmSelectionne" id="movieElement">
+  <h3>{{ filmSelectionne.titre }}</h3>
   <img class="imageFilm" [src]='filmSelectionne.link'>
 </div>

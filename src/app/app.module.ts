@@ -7,12 +7,15 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ListeComponent } from './liste/liste.component';
-import { GestionComponent } from './gestion/gestion.component';
+import { GestionComponent } from "./gestion/gestion.component";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContactComponent } from './contact/contact.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
+import {NgOptimizedImage} from "@angular/common";
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+
 
 
 @NgModule({
@@ -29,9 +32,13 @@ import {MatInputModule} from "@angular/material/input";
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatInputModule,
+    NgOptimizedImage,
+    FontAwesomeModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
