@@ -7,9 +7,11 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ListeComponent } from './liste/liste.component';
-import { GestionComponent } from './gestion/gestion.component';
+import { GestionComponent } from "./gestion/gestion.component";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContactComponent } from './contact/contact.component';
+import {NgOptimizedImage} from "@angular/common";
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { ContactComponent } from './contact/contact.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    NgOptimizedImage,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,3 +2,8 @@
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+
+@font-face {
+  font-family: 'MyFont';
+  src: url('C:/Users/chadi/Documents/étude/Sorbone/M1 MIAGE/Angular/google fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf');
+}
