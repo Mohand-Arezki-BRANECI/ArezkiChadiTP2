@@ -10,6 +10,9 @@ import { ListeComponent } from './liste/liste.component';
 import { GestionComponent } from './gestion/gestion.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContactComponent } from './contact/contact.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatInputModule} from "@angular/material/input";
 
 
 @NgModule({
@@ -20,12 +23,15 @@ import { ContactComponent } from './contact/contact.component';
     ListeComponent,
     GestionComponent,
     HomeComponent,
-    ContactComponent
+    //ContactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
