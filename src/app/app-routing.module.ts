@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {HomeComponent} from "./home/home.component";
-import {ListComponent} from "./list/list.component";
-import { GestionComponent } from './gestion/gestion.component';
-import {ContactComponent} from "./contact/contact.component";
+import {HomeComponent} from "./Components/home/home.component";
+import {ListComponent} from "./Components/list/list.component";
+import { GestionComponent } from './Components/gestion/gestion.component';
+import {ContactComponent} from "./Components/contact/contact.component";
 
 
 

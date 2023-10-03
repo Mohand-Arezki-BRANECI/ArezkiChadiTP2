@@ -1,7 +1,6 @@
-
 import {Component, OnInit} from '@angular/core';
-import {DataService} from "../data.service";
-import {faHome} from "@fortawesome/free-solid-svg-icons";
+import {DataService} from "../../Services/data.service";
+import {User} from "../../../Model/user";
 
 
 @Component({
@@ -10,19 +9,18 @@ import {faHome} from "@fortawesome/free-solid-svg-icons";
   styleUrls: ['./gestion.component.scss']
 })
 export class GestionComponent implements OnInit {
-  formData: any;
+  user: User | undefined;
   constructor(private dataService: DataService) {}
 
-  ngOnInit() {
+  ngOnInit():void  {
     // Subscribe to the formData$ observable to get updates
     this.dataService.formData$.subscribe(data => {
-      this.formData = data;
+      this.user = data;
     });
   }
-
   // Check if formData is available, otherwise display a 404 error
   protected get show404Error() {
-    return !this.formData;
+    return !this.user;
   }
 
 }

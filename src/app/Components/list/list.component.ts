@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Movie} from "../../model/movie";
+import {Movie} from "../../../Model/movie";
 
 @Component({
   selector: 'app-list',
@@ -7,7 +7,7 @@ import {Movie} from "../../model/movie";
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent {
-  protected movieList = [
+  protected movieList:Movie[] = [
     new Movie('Le seigneur des anneaux','assets/img/LSDA.jpg'),
     new Movie('Harry Potter','assets/img/HP.jpg'),
     new Movie('Star Wars','assets/img/StarWars.jpg'),
@@ -16,7 +16,7 @@ export class ListComponent {
 
   protected selectedMovie: Movie | undefined;
 
-  protected printMovie(movie: Movie) {
+  protected printMovie(movie: Movie):void {
     this.selectedMovie = movie;
   }
 

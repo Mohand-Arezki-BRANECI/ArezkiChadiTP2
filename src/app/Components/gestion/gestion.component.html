@@ -1,0 +1,20 @@
+<div class="container mt-5 d-flex justify-content-center">
+  <div *ngIf="show404Error; else displayFormData" class="text-center">
+    <h2 class="text-danger">404 ERROR: Data not found</h2>
+  </div>
+
+  <ng-template #displayFormData>
+    <div *ngIf="user" class="text-center">
+      <h2 class="mb-4">Recap of the inserted data</h2>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <p class="card-text">First Name: {{ user.firstName }}</p>
+          <p class="card-text">Last Name: {{ user.lastName }}</p>
+          <p class="card-text">Age: {{ user.age }}</p>
+          <p *ngIf="user.email" class="card-text">Email: {{ user.email }}</p>
+          <p class="card-text">Comment: {{ user.comment }}</p>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
