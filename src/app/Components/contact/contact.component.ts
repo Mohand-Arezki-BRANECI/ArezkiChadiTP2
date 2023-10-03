@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {DataService} from "../data.service";
+import {Component} from '@angular/core';
+import {DataService} from "../../Services/data.service";
 import {
   FormControl,
   FormGroupDirective,
@@ -20,7 +20,7 @@ import {Router} from "@angular/router";
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-    const isSubmitted = form && form.submitted;
+    const isSubmitted : boolean|null = form && form.submitted;
     return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
   }
 }
@@ -34,48 +34,37 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   imports: [FormsModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule, NgIf, MatCheckboxModule, MatAutocompleteModule],
 })
 export class ContactComponent {
-  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
-  matcher = new MyErrorStateMatcher();
-  protected readonly auto = auto;
+  emailFormControl: FormControl = new FormControl('', [Validators.required, Validators.email]);
+  matcher : MyErrorStateMatcher = new MyErrorStateMatcher();
+  protected readonly auto : "auto" = auto;
   formGroup: FormGroup;
+  isEmailVisible : boolean = true;
 
   constructor(private fb: FormBuilder, private router: Router, private dataService: DataService) {
     this.formGroup = this.fb.group({
       firstName: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
-      age: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
+      age: [''],
       comment: ['', [Validators.required]],
     });
   }
 
-  get firstNameControl() {
+  protected get firstNameControl() {
     return this.formGroup.get('firstName');
   }
-
-  get lastNameControl() {
+  protected get lastNameControl() {
     return this.formGroup.get('lastName');
   }
-
-  get ageControl() {
-    return this.formGroup.get('age');
-  }
-
-
-  get commentControl() {
+  protected get commentControl() {
     return this.formGroup.get('comment');
   }
-
-  get isFormValid() {
+  protected get isFormValid() {
     return this.formGroup.valid;
   }
 
-  isEmailVisible = true;
-
-  // Your existing code for emailFormControl and matcher...
-
   // Function to toggle email validation based on checkbox state
-  toggleEmailValidation() {
+  protected toggleEmailValidation() : void {
     if (this.isEmailVisible) {
       // If the checkbox is checked, hide the email field and remove validators
       this.isEmailVisible = false;
@@ -88,27 +77,24 @@ export class ContactComponent {
   }
 
   // Function to add email validators
-  addEmailValidators() {
+  private addEmailValidators() : void {
     // Add your email validation logic here
     this.formGroup.controls["email"].setValidators(Validators.required);
     this.formGroup.controls["email"].updateValueAndValidity();
   }
 
   // Function to remove email validators
-  removeEmailValidators() {
+  private removeEmailValidators():void {
     // Remove any existing validation logic
     this.formGroup.controls["email"].clearValidators();
     this.formGroup.controls["email"].updateValueAndValidity();
   }
 
-  onSubmit() {
+  protected onSubmit() : void {
     // Check if the form is valid
     if (this.formGroup.valid) {
       // Retrieve form data and log to the console
       const formData = this.formGroup.value;
-      console.log('Form data:', formData);
-
-      // Show an alert indicating that the form is valid
       alert('Form is valid');
       this.dataService.setFormData(formData);
       this.router.navigate(['/home']);
