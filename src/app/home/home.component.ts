@@ -14,7 +14,7 @@ export class HomeComponent {
 
 public animation(){
   if(this.randomClass == ''){
-    this.randomClass = this.animationClass[0];
+    this.randomClass = this.animationClass[1];
   } else {
     this.randomClass = '';
   }

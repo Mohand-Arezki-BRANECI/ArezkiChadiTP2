@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Movie} from "../../model/movie";
 
 @Component({
   selector: 'app-liste',
@@ -7,15 +8,15 @@ import { Component } from '@angular/core';
 })
 export class ListeComponent {
   listFilms = [
-    {titre:'Le seigneur des Anneaux', link:'assets/img/LSDA.jpg'},
-    {titre:'Harry Potter', link:'assets/img/HP.jpg'},
-    {titre:'Star Wars', link:'assets/img/StarWars.jpg'},
-    {titre:'Indiana Jones', link:'assets/img/IJ.jpg'},
-    {titre:'Seven', link:'assets/img/seven.jpg'}];
+    new Movie('Le seigneur des anneaux','assets/img/LSDA.jpg'),
+    new Movie('Harry Potter','assets/img/HP.jpg'),
+    new Movie('Star Wars','assets/img/StarWars.jpg'),
+    new Movie('Indiana Jones','assets/img/IJ.jpg'),
+    new Movie('Seven','assets/img/seven.jpg')]
 
-  filmSelectionne: any;
+  filmSelectionne: Movie | undefined;
 
-  afficherFilm(film: any) {
+  afficherFilm(film: Movie) {
     this.filmSelectionne = film;
   }
 
