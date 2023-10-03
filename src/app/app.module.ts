@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { ListeComponent } from './liste/liste.component';
+import { ListComponent } from './list/list.component';
 import { GestionComponent } from "./gestion/gestion.component";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContactComponent } from './contact/contact.component';
@@ -23,7 +23,7 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    ListeComponent,
+    ListComponent,
     GestionComponent,
     HomeComponent,
     //ContactComponent

@@ -21,7 +21,7 @@ export class GestionComponent implements OnInit {
   }
 
   // Check if formData is available, otherwise display a 404 error
-  get show404Error() {
+  protected get show404Error() {
     return !this.formData;
   }
 

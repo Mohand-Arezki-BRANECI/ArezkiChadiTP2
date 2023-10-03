@@ -8,13 +8,15 @@ import { Component } from '@angular/core';
 
 
 export class HomeComponent {
-  public animationClass = ["fa-beat","fa-bounce","fa-flip","fa-shake","fa-spin",];
+  private animationClass = ["fa-beat","fa-bounce","fa-flip","fa-shake","fa-spin",];
 
+  randomValue: number | undefined;
   randomClass:string = '';
 
-public animation(){
+protected animation(){
+  this.randomValue = Math.floor(Math.random() * 5);
   if(this.randomClass == ''){
-    this.randomClass = this.animationClass[1];
+    this.randomClass = this.animationClass[this.randomValue];
   } else {
     this.randomClass = '';
   }

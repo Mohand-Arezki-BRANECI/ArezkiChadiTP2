@@ -49,24 +49,24 @@ export class ContactComponent {
     });
   }
 
-  get firstNameControl() {
+  protected get firstNameControl() {
     return this.formGroup.get('firstName');
   }
 
-  get lastNameControl() {
+  protected get lastNameControl() {
     return this.formGroup.get('lastName');
   }
 
-  get ageControl() {
+  protected get ageControl() {
     return this.formGroup.get('age');
   }
 
 
-  get commentControl() {
+  protected get commentControl() {
     return this.formGroup.get('comment');
   }
 
-  get isFormValid() {
+  protected get isFormValid() {
     return this.formGroup.valid;
   }
 
@@ -75,7 +75,7 @@ export class ContactComponent {
   // Your existing code for emailFormControl and matcher...
 
   // Function to toggle email validation based on checkbox state
-  toggleEmailValidation() {
+  protected toggleEmailValidation() {
     if (this.isEmailVisible) {
       // If the checkbox is checked, hide the email field and remove validators
       this.isEmailVisible = false;
@@ -88,14 +88,14 @@ export class ContactComponent {
   }
 
   // Function to add email validators
-  addEmailValidators() {
+  protected addEmailValidators() {
     // Add your email validation logic here
     this.formGroup.controls["email"].setValidators(Validators.required);
     this.formGroup.controls["email"].updateValueAndValidity();
   }
 
   // Function to remove email validators
-  removeEmailValidators() {
+  protected removeEmailValidators() {
     // Remove any existing validation logic
     this.formGroup.controls["email"].clearValidators();
     this.formGroup.controls["email"].updateValueAndValidity();
