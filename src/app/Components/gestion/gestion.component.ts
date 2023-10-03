@@ -14,7 +14,7 @@ export class GestionComponent implements OnInit {
 
   ngOnInit():void  {
     // Subscribe to the formData$ observable to get updates
-    this.dataService.formData$.subscribe(data => {
+    this.dataService.getDataObservable().subscribe(data => {
       this.user = data;
     });
   }

@@ -13,7 +13,7 @@ export class HomeComponent {
 
   public animation() : void {
     if(this.randomClass == ''){
-      this.randomClass = this.animationClass[1];
+      this.randomClass = this.animationClass[Math.ceil(Math.random() * 5)];
     } else {
       this.randomClass = '';
     }
