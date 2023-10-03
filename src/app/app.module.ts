@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { HomeComponent } from './Components/home/home.component';
-import { ListeComponent } from './Components/liste/liste.component';
+import { ListComponent } from './Components/list/list.component';
 import { GestionComponent } from "./Components/gestion/gestion.component";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,7 +21,7 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    ListeComponent,
+    ListComponent,
     GestionComponent,
     HomeComponent,
   ],

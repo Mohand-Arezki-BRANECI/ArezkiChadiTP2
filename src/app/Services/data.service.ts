@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
 import {User} from "../../Model/user";
 
 @Injectable({
@@ -8,11 +8,11 @@ import {User} from "../../Model/user";
 export class DataService {
 
   constructor() { }
-  private formDataSubject = new BehaviorSubject<any>(null);
-  formData$ = this.formDataSubject.asObservable();
+  private formDataSubject : BehaviorSubject<User> = new BehaviorSubject<any>(null);
+  formData$ : Observable<User> = this.formDataSubject.asObservable();
 
-  setFormData(formData: User) {
-    let user = new User(formData.firstName, formData.lastName, formData.age, formData.email, formData.comment)
+  setFormData(formData: User):void {
+    let user : User = new User(formData.firstName, formData.lastName, formData.age, formData.email, formData.comment)
     this.formDataSubject.next(user);
   }
 }

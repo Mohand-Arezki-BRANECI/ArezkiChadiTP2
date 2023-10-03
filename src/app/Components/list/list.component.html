@@ -1,0 +1,11 @@
+<div class="pageTitle">List of Movies</div>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let movie of movieList" (click)="printMovie(movie)">
+    {{ movie.title }}
+  </li>
+</ul>
+
+<div *ngIf="selectedMovie" id="movieElement">
+  <h3>{{ selectedMovie.title }}</h3>
+  <img alt="" class="imageFilm" [src]='selectedMovie.link'>
+</div>
